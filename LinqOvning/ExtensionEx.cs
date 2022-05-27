@@ -4,6 +4,18 @@ namespace LinqOvning
 {
     internal static class ExtensionEx
     {
+        public static Person? AddLastName(this IEnumerable<Person> persons, string lastNameToAdd, string name = "")
+        {
+            Person? person = !string.IsNullOrEmpty(name)
+                ? persons.FirstOrDefault(n => n.Name == name)
+                : persons.FirstOrDefault();
+
+            person = persons.FirstOrDefault();
+            person.Name += $" {lastNameToAdd}";
+            return person;
+        }
+
+
         public static IEnumerable<Person> FindUppercaseBegin(this IEnumerable<Person> persons)
         {
             return persons.Where(a => a.Name is not null && char.IsUpper(a.Name[0])).ToList();

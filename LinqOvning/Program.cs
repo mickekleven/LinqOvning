@@ -29,6 +29,10 @@
         {
             var persons = GetPersons();
 
+            //2. Skapa en extension som lägger till valfritt efternamn på en person som så deras Name består av för och efternamn separerat med mellanslag
+            var person = persons.AddLastName("Pettersson");
+            Console.WriteLine($"{person.Name}");
+
             //ShowResult(GetPersons().FindUppercaseBegin());
 
             //Expression<Func<Person, bool>> findName = x => x.Name == "Nisse";
@@ -71,8 +75,8 @@
             //var result = numbers.Where(n => n % 2 == 0).Sum();
 
             //16. Vilka personers ålder återfinns i GetNumbers kollektionen
-            var numbers = GetNumbers();
-            persons.CompareCollections(numbers);
+            //var numbers = GetNumbers();
+            //persons.CompareCollections(numbers);
 
         }
 
